@@ -1,0 +1,29 @@
+PODS:
+  - Hero (1.4.0)
+  - RxCocoa (4.5.0):
+    - RxSwift (>= 4.4.2, ~> 4.4)
+  - RxSwift (4.5.0)
+  - SnapKit (5.0.0)
+
+DEPENDENCIES:
+  - Hero (~> 1.4)
+  - RxCocoa (~> 4.4)
+  - RxSwift (~> 4.4)
+  - SnapKit (~> 5)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Hero
+    - RxCocoa
+    - RxSwift
+    - SnapKit
+
+SPEC CHECKSUMS:
+  Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
+  RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
+  RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
+  SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
+
+PODFILE CHECKSUM: 024f3c99546e02f6080e993f6e67ff013aa164ee
+
+COCOAPODS: 1.6.1

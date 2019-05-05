@@ -9,25 +9,43 @@
 import UIKit
 import SnapKit
 
-class OtherController: UIViewController {
+class OtherController: PresentableViewController<OtherViewModel> {
+
+    var test: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        view.hero.id = "background"
-
-        let test = UIView()
+    }
+    
+    override func addSubviews() {
+        test = UIView()
         test.backgroundColor = .red
         self.view.addSubview(test)
-
+    }
+    
+    override func makeConstraints() {
         test.snp.makeConstraints { make in
             make.width.height.equalTo(250)
             make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview().offset(-100)
+            make.centerY.equalToSuperview().offset(200)
         }
-        test.hero.isEnabled = true
-        test.hero.id = "test"
+    }
+    
+    override func setupBindings() {
         
     }
 
+    override func preparePresentation(with context: PresentationContext) {
+        
+        if let backgroundID = context.backgroundID {
+            view.hero.isEnabled = true
+            view.hero.id = backgroundID
+        }
+        
+        if let imageID = context.imageID {
+            test.hero.isEnabled = true
+            test.hero.id = imageID
+        }
+    }
 }

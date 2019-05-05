@@ -7,37 +7,36 @@
 //
 
 import UIKit
+import RxSwift
 
-protocol AppCoordinatorDelegate {
-    func trigger()
-}
+final class AppCoordinator: AnyCoordinator<AppViewModel, AppController> {
 
-final class AppCoordinator: Coordinator {
-    let window: UIWindow
+    static let instance = AppCoordinator()
+    
     let rootViewController: UINavigationController
     
-    init(in window: UIWindow) {
-        self.window = window
+    let disposeBag = DisposeBag()
+    
+    override init() {
+        
         rootViewController = UINavigationController()
         rootViewController.hero.isEnabled = true
+        super.init()
     }
-
-    func start() {
-        window.rootViewController = rootViewController
-        window.makeKeyAndVisible()
+    
+    override func makeViewModel() -> AppViewModel {
+        let vm = AppViewModel()
         
-        let emptyViewController = AppController()
-        emptyViewController.delegate = self
-        (window.rootViewController as! UINavigationController)
-            .pushViewController(emptyViewController, animated: false)
+        vm.present
+            .map { (OtherCoordinator(), $0) }
+            .subscribe(onNext: self.present)
+            .disposed(by: disposeBag)
+        return vm
     }
     
-    
-}
-
-extension AppCoordinator: AppCoordinatorDelegate {
-    func trigger() {
-        let other = OtherCoordinator(presenter: rootViewController, viewController: OtherController())
-        other.start()
+    override func makeViewController(viewModel: AppViewModel) -> AppController {
+        let appController = AppController()
+        appController.viewModel = makeViewModel()
+        return appController
     }
 }

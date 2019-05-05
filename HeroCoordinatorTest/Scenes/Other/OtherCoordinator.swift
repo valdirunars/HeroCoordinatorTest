@@ -9,16 +9,13 @@
 import UIKit
 import Hero
 
-final class OtherCoordinator: Coordinator {
-    let presenter: UINavigationController
-    let viewController: UIViewController
+final class OtherCoordinator: AnyCoordinator<OtherViewModel, OtherController> {
     
-    init(presenter: UINavigationController, viewController: UIViewController) {
-        self.presenter = presenter
-        self.viewController = viewController
+    override func makeViewModel() -> OtherViewModel {
+        return OtherViewModel()
     }
     
-    func start() {
-        presenter.pushViewController(viewController, animated: true)
+    override func makeViewController(viewModel: OtherViewModel) -> OtherController {
+        return OtherController()
     }
 }

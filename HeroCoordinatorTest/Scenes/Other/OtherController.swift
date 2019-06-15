@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import Hero
 
 class OtherController: PresentableViewController<OtherViewModel> {
 

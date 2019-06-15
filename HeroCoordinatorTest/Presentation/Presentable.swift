@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Hero
 
 protocol Presentable {
     associatedtype ViewModel
@@ -18,10 +19,15 @@ typealias PresentableVC = UIViewController & Presentable
 
 class PresentableViewController<VM>: PresentableVC {
 
+    var panGR: UIPanGestureRecognizer!
     var viewModel: VM!
     
     override func viewDidLoad() {
-        self.hero.isEnabled = true
+        hero.isEnabled = true
+        
+        panGR = UIPanGestureRecognizer(target: self,
+                                       action: #selector(handlePan(gestureRecognizer:)))
+        view.addGestureRecognizer(panGR)
 
         addSubviews()
         makeConstraints()
@@ -44,6 +50,28 @@ class PresentableViewController<VM>: PresentableVC {
     
     func setupBindings() {
         fatalError("Not Implemented")
+    }
+    
+    @objc func handlePan(gestureRecognizer: UIPanGestureRecognizer) {
+        let translation = panGR.translation(in: nil)
+        let progress = translation.y / 2 / view.bounds.height
+        
+        switch panGR.state {
+        case .began:
+            // begin the transition as normal
+            hero.dismissViewController()
+        case .changed:
+            Hero.shared.update(progress)
+//            for subview in view.subviews {
+//                Hero.shared.apply(modifiers: [.position(translation + subview.center)], to: subview)
+//            }
+        default:
+            if progress + panGR.velocity(in: nil).y / view.bounds.height > 0.3 {
+                Hero.shared.finish()
+            } else {
+                Hero.shared.cancel()
+            }
+        }
     }
 }
 

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,6 +20,7 @@
 		3850303E227BC41900077368 /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3850303D227BC41900077368 /* AppController.swift */; };
 		38503041227BC57C00077368 /* OtherCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38503040227BC57C00077368 /* OtherCoordinator.swift */; };
 		38503043227BC58B00077368 /* OtherController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38503042227BC58B00077368 /* OtherController.swift */; };
+		5390FF0922B500C000EC9991 /* CoreGraphics+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5390FF0822B500C000EC9991 /* CoreGraphics+Helpers.swift */; };
 		C406C574D07B53FFD7B56D24 /* Pods_HeroCoordinatorTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BA9E1FBCD3E314C17508264 /* Pods_HeroCoordinatorTestTests.framework */; };
 		ED3163E8A19582DD7998BF85 /* Pods_HeroCoordinatorTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9A0FA94E6E62802408C424E /* Pods_HeroCoordinatorTest.framework */; };
 /* End PBXBuildFile section */
@@ -57,6 +58,7 @@
 		42440CCB1D8F1405B322ABE4 /* Pods-HeroCoordinatorTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeroCoordinatorTestTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HeroCoordinatorTestTests/Pods-HeroCoordinatorTestTests.release.xcconfig"; sourceTree = "<group>"; };
 		4BA9E1FBCD3E314C17508264 /* Pods_HeroCoordinatorTestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HeroCoordinatorTestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C111E499952D7D81C1453D9 /* Pods-HeroCoordinatorTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeroCoordinatorTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-HeroCoordinatorTest/Pods-HeroCoordinatorTest.release.xcconfig"; sourceTree = "<group>"; };
+		5390FF0822B500C000EC9991 /* CoreGraphics+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreGraphics+Helpers.swift"; sourceTree = "<group>"; };
 		E9A0FA94E6E62802408C424E /* Pods_HeroCoordinatorTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HeroCoordinatorTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -110,6 +112,7 @@
 				380047FD227BAE6400117F80 /* Assets.xcassets */,
 				380047FF227BAE6400117F80 /* LaunchScreen.storyboard */,
 				38004802227BAE6400117F80 /* Info.plist */,
+				5390FF0822B500C000EC9991 /* CoreGraphics+Helpers.swift */,
 			);
 			path = HeroCoordinatorTest;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				38503043227BC58B00077368 /* OtherController.swift in Sources */,
 				380047F7227BAE6100117F80 /* AppDelegate.swift in Sources */,
 				384C84E5227D11C90027B26C /* PresentationContext.swift in Sources */,
+				5390FF0922B500C000EC9991 /* CoreGraphics+Helpers.swift in Sources */,
 				38503041227BC57C00077368 /* OtherCoordinator.swift in Sources */,
 				38503037227BB23000077368 /* Coordinator.swift in Sources */,
 				384C84E7227D11EC0027B26C /* Presentable.swift in Sources */,

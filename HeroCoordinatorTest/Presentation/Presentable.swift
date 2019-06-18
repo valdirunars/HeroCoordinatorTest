@@ -62,9 +62,6 @@ class PresentableViewController<VM>: PresentableVC {
             hero.dismissViewController()
         case .changed:
             Hero.shared.update(progress)
-//            for subview in view.subviews {
-//                Hero.shared.apply(modifiers: [.position(translation + subview.center)], to: subview)
-//            }
         default:
             if progress + panGR.velocity(in: nil).y / view.bounds.height > 0.3 {
                 Hero.shared.finish()
